@@ -286,7 +286,7 @@ export class VSCodeNotebookController implements Disposable, IVSCodeNotebookCont
         // Notebook is trusted. Continue to execute cells
 
         for (let cell of cells) {
-            this.executeCell(notebook, cell);
+            await this.executeCell(notebook, cell);
             sleep(50);
         }
         // await Promise.all(cells.map((cell) => this.executeCell(notebook, cell)));
