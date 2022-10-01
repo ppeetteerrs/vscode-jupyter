@@ -29,7 +29,7 @@
         "theme": "light"
     },
     "engines": {
-        "vscode": "^1.72.0-insider"
+        "vscode": "^1.71.2"
     },
     "keywords": [
         "jupyter",
@@ -2000,9 +2000,9 @@
                     "scope": "resource",
                     "description": "%jupyter.configuration.jupyter.experimental.kernelPickerType.description%",
                     "enumDescriptions": [
-                            "%jupyter.configuration.jupyter.experimental.kernelPickerType.items.enumDescriptions.stable%",
-                            "%jupyter.configuration.jupyter.experimental.kernelPickerType.items.enumDescriptions.onlyonetypeofkernel%",
-                            "%jupyter.configuration.jupyter.experimental.kernelPickerType.items.enumDescriptions.insiders%"
+                        "%jupyter.configuration.jupyter.experimental.kernelPickerType.items.enumDescriptions.stable%",
+                        "%jupyter.configuration.jupyter.experimental.kernelPickerType.items.enumDescriptions.onlyonetypeofkernel%",
+                        "%jupyter.configuration.jupyter.experimental.kernelPickerType.items.enumDescriptions.insiders%"
                     ],
                     "default": "Stable"
                 }

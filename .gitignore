@@ -5,7 +5,7 @@ out
 log.log
 **/node_modules
 *.pyc
-*.vsix
+# *.vsix
 **/.vscode/.ropeproject/**
 **/testFiles/**/.cache/**
 *.noseids

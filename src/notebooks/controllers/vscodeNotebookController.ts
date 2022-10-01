@@ -82,6 +82,7 @@ import { KernelMessage } from '@jupyterlab/services';
 import { initializeInteractiveOrNotebookTelemetryBasedOnUserAction } from '../../kernels/telemetry/helper';
 import { NotebookCellLanguageService } from '../languages/cellLanguageService';
 import { IDataScienceErrorHandler } from '../../kernels/errors/types';
+import { sleep } from '../../test/core';
 
 /**
  * Our implementation of the VSCode Notebook Controller. Called by VS code to execute cells in a notebook. Also displayed
@@ -283,7 +284,12 @@ export class VSCodeNotebookController implements Disposable, IVSCodeNotebookCont
         }
         await initializeInteractiveOrNotebookTelemetryBasedOnUserAction(notebook.uri, this.connection);
         // Notebook is trusted. Continue to execute cells
-        await Promise.all(cells.map((cell) => this.executeCell(notebook, cell)));
+
+        for (let cell of cells) {
+            this.executeCell(notebook, cell);
+            sleep(50);
+        }
+        // await Promise.all(cells.map((cell) => this.executeCell(notebook, cell)));
     }
     private warnWhenUsingOutdatedPython() {
         const pyVersion = this.kernelConnection.interpreter?.version;
